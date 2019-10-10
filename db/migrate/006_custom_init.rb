@@ -16,7 +16,7 @@ class CustomInit < ActiveRecord::Migration[5.2]
     cv.insertion_position = 'issue_form'
     cv.is_enabled = true
     cv.customize_type = 'javascript'
-    cv.code = File.read('extra/pr.js')
+    cv.code = File.read(File.expand_path("../../migrate/extra/pr.js", __FILE__))
     cv.save!
   end
 
